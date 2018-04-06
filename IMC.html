@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>IMC</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript" >
+    function CalcularIMC(){
+
+      var A = document.getElementById("Altura").value;
+      var P = document.getElementById("Peso").value;
+      
+      var Total = P / (A * A);
+      
+      alert(Total);
+
+    }
+
+
+  </script>
+  
+</head>
+
+<body>
+  <h1>Cálculo do IMC</h1>
+
+  <form>
+    <h2>Sexo</h2>
+    <input type="radio" name="Sexo" />Masculino 
+    <input type="radio" name="Sexo" />Feminino <br>
+
+    <h2>Idade</h2>
+    <input type="number" placeholder="35"> anos
+
+    <h2>Altura</h2>
+    <input id="Altura" type="text" name="" placeholder="1,60"> m
+
+    <h2>Peso</h2>
+    <input id="Peso" type="text" name="" placeholder="62.5"> kg
+
+    <h2>Atividade</h2>
+    <input type="radio" name="AF" />Sedentária 
+    <input type="radio" name="AF" />Moderada 
+    <input type="radio" name="AF" />Intensa 
+    
+
+  </form>
+  <br>
+  <input 
+  type="button" 
+  value="Calcular IMC"
+  onclick="CalcularIMC()">
+
+</body>
+</html>
