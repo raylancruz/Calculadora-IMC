@@ -3,6 +3,13 @@
 <head>
   <title>IMC</title>
   <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <script type="text/javascript" >
 
     function CalcularIMC(){
@@ -11,58 +18,59 @@
       var P = document.getElementById("Peso").value;
       var Total = P / (A * A);
       if(Total<18.5){
-        alert("Você está magro com esse indice: " + Total);
+        alert("Você está magro com esse indice: " + Total.toFixed(2));
       }
       else if(Total>=18.5 && Total<24.9){
-        alert("Você está normal com esse indice: " + Total);
+        alert("Você está normal com esse indice: " + Total.toFixed(2));
       }
 
       else if(Total>=25 && Total<29.9) {
-        alert("Você está com sobre peso com esse indice: " + Total);
+        alert("Você está com sobre peso com esse indice: " + Total.toFixed(2));
       }
       else if(Total>=30 && Total<39.9) {
-        alert("Você está com obesidade com esse indice: " + Total);
+        alert("Você está com obesidade com esse indice: " + Total.toFixed(2));
       }
       else if (Total>40)
-        alert("Você estácom obesidade grave com esse indice: " + Total);
+        alert("Você estácom obesidade grave com esse indice: " + Total.toFixed(2));
     }
 
 
   </script>
 
   <style>
-    form.borda {border-style: solid; border-color: red;}
-    form{text-align: center;}
-   body {text-align: center;}
-   body {
-  background: #0C2939;
-}
-   header, form ,h1{
-  text-align: center;
-  background: white;
-  margin: 20px 0;
-  padding: 10px;
-}
+  form.borda {border-style: solid; border-color: red;}
+  form{text-align: center;}
+  body {text-align: center;}
+  body {
+    background:   #90EE90;
+  }
+ 
 
-form a {
-  text-decoration: none;
-  background: #333;
-  border-radius: 5px;
-  color: white;
-  padding: 3px 8px;
-}
+  form a {
+    text-decoration: none;
+    background: #333;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 8px;
+  }
 
-  </style>
+</style>
 </head>
 
 <body>
-  <h1 class="Titulo">Cálculo do IMC</h1>
+  <div>
+    <h1 class="col-6 offset-md-3 jumbotron">Cálculo do IMC</h1>
+  </div>
 
-
-  <form class="borda" >
+  <div class="container col-12">
+      <div class="col-6 offset-md-3 jumbotron">
+        <form>
     <h2>Sexo</h2>
-    <input type="radio" name="Sexo" />Masculino 
-    <input type="radio" name="Sexo" />Feminino <br>
+    
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary">Masculino</button>
+      <button type="button" class="btn btn-secondary">Feminino</button>
+    </div>
 
     <h2>Idade</h2>
     <input type="number" placeholder="35"> anos
@@ -73,20 +81,32 @@ form a {
     <h2>Peso</h2>
     <input id="Peso" type="text" name="" placeholder="62.5"> kg
 
-    <h2>Atividade</h2>
-    <input type="radio" name="AF" />Sedentária 
-    <input type="radio" name="AF" />Moderada 
-    <input type="radio" name="AF" />Intensa 
+    <h2>Atividade Física</h2>
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+    <button type="button" class="btn btn-secondary">Sedentária</button>
+    <button type="button" class="btn btn-secondary">Moderada</button>
+    <button type="button" class="btn btn-secondary">Intensa</button>
+    </div>
     <br>
 
   </form>
-  <br>
+      </div>
+  </div>
+
+
+
+
   
-  <input 
-   style="width: 100px; height: 50px"
+  <br>
+
+  
+  <input
+
+  class="btn btn-secundary btn-lg"
   type="button" 
   value="Calcular IMC"
-    onclick="CalcularIMC()">
+  onclick="CalcularIMC()">
   <br>
 
 </body>
